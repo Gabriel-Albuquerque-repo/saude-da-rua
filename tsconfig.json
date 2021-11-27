@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "lib": [
+      "es6"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
+    "rootDir": "./src",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ],
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "outDir": "./dist",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@App": ["src/App.ts"],
+      "@googleAuth": ["src/auth/google/oauth2.ts"],
+      "@entities/*": ["src/entities/*"],
+      "@useCases/*": ["./src/useCases/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@repositories/*": ["./src/repositories/*"],
+      "@mongoConnection" : ["./src/repositories/implementations/MongoConnection.ts"],
+      "@routes": ["src/routes.ts"]
+    }
+  },
+  "exclude": [
+    "./babel.config.js"
+    // "./built/**/*"
+  ]
+}
