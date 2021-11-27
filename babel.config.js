@@ -13,7 +13,7 @@ module.exports = {
   plugins: [
     ['module-resolver', {
       alias: {
-        '@App': 'src/App.ts',
+        '@app': 'src/app.ts',
         '@entites': './src/entites',
         '@useCases': './src/useCases',
         '@utils': 'src/utils',

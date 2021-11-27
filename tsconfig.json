@@ -21,7 +21,7 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@App": ["src/App.ts"],
+      "@app": ["src/app.ts"],
       "@googleAuth": ["src/auth/google/oauth2.ts"],
       "@entities/*": ["src/entities/*"],
       "@useCases/*": ["./src/useCases/*"],
