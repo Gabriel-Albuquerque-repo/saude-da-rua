@@ -22,7 +22,7 @@ interface IOccupationsOptions {
     option6?: string;
 }
 
-export default class Volunteer {
+class Volunteer {
   public readonly id?: string;
 
   public createdAt?: number;
@@ -45,11 +45,15 @@ export default class Volunteer {
 
   public experienceWithHealthy?: string;
 
-  public didPartipate?: boolean;
+  public didParticipate?: boolean;
 
   public numberOfParticipation?: number;
 
   public howDidKnowOfSDR?: string;
+
+  private assignFreeDaysOf(): void {
+    this.numberOfFreeDaysOfWeek = this.listfreeDaysOfWeek.length;
+  }
 
   constructor(props: Omit<Volunteer, 'id' | 'createdAt'>, id?: string, createdAt?: number) {
     Object.assign(this, props);
@@ -61,5 +65,9 @@ export default class Volunteer {
     if (!createdAt) {
       this.createdAt = Date.now();
     }
+
+    this.assignFreeDaysOf();
   }
 }
+
+export { Volunteer, FreeDaysOfWeek, OccupationOptions };
