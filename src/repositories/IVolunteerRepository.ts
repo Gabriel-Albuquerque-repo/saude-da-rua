@@ -4,6 +4,6 @@
 import { Volunteer } from '@entities/Volunteer';
 
 export default interface IVolunteerRepository {
-    findOne(email: string): Promise<Volunteer>;
-    save(volunteer: Volunteer): Promise<void>;
+    findByEmail(email: string): Promise<Volunteer>;
+    saveVolunteer(volunteer: Volunteer): Promise<void>;
 }
