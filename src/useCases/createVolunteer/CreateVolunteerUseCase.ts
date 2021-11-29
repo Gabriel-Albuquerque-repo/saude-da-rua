@@ -12,7 +12,7 @@ export default class CreateVolunteerUseCase {
   }
 
   async execute(data: ICreateVolunteerRequestDTO) {
-    const volunteerAlreadyExists = await this.volunteerRepository.findOne(data.email);
+    const volunteerAlreadyExists = await this.volunteerRepository.findByEmail(data.email);
 
     if (volunteerAlreadyExists) {
       throw new Error('Volunteer already exists / Voluntário já existe');
@@ -20,6 +20,6 @@ export default class CreateVolunteerUseCase {
 
     const volunteer = new Volunteer(data);
 
-    await this.volunteerRepository.save(volunteer);
+    await this.volunteerRepository.saveVolunteer(volunteer);
   }
 }
