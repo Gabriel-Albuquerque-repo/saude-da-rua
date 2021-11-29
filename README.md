@@ -9,15 +9,19 @@
 - Node;
 - MongoDB;
 
-### Dependências externas(npm):
+### Dependências externas(yarn):
 - Express;
 - mongoose;
-- ts-node-dev/ tsconfig-paths;
-- debug;
-- denv;
+- uuidv4;
+- dotenv;
+
+### Dependências de desenvolvimento(yarn):
 - babel;
-- eslint/ eslint-config-airbnb-base;
+- eslint
+- ts-node-dev;
+- eslint/eslint-config-airbnb-base;
 
 
-### Aprendizados (em andamento):
-- 
+### Aprendizados (tentando):
+- Entender os princípios SOLID e seu fluxo;
+- Manter lógica e padrão no fluxo de commits;
