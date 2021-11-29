@@ -70,4 +70,4 @@ class Volunteer {
   }
 }
 
-export { Volunteer, FreeDaysOfWeek, OccupationOptions };
+export { Volunteer, FreeDaysOfWeek, OccupationOptions, IOccupationsOptions };
