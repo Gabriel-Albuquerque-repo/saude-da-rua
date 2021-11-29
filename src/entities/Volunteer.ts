@@ -59,6 +59,7 @@ export default class Volunteer {
     }
 
     if (!createdAt) {
+      this.createdAt = Date.now();
     }
   }
 }
