@@ -1,25 +1,36 @@
+/* eslint-disable no-unused-vars */
 import { uuid } from 'uuidv4';
 
-const enum OccupationOptions {
-    'MÉDICO(A)',
-    'ENFERMEIRO(A)',
-    'FARMACÊUTICO(A)',
-    'ESTUDANTE DE MEDICINA',
-    'ESTUDANTE DE ENFERMAGEM',
+enum OccupationOptions {
+  occupation_1 = 'MÉDICO(A)',
+
+  occupation_2 = 'ENFERMEIRO(A)',
+
+  occupation_3 = 'FARMACÊUTICO(A)',
+
+  occupation_4 = 'ESTUDANTE DE MEDICINA',
+
+  occupation_5 = 'ESTUDANTE DE ENFERMAGEM',
 }
 
-const enum FreeDaysOfWeek {
-    'DOMINGO',
-    'SEGUNDA',
-    'TERÇA',
-    'QUARTA',
-    'QUINTA',
-    'SEXTA',
-    'SÁBADO',
+enum FreeDaysOfWeek {
+    weekDay_1 = 'DOMINGO',
+
+    weekDay_2 = 'SEGUNDA',
+
+    weekDay_3 = 'TERÇA',
+
+    weekDay_4 = 'QUARTA',
+
+    weekDay_5 = 'QUINTA',
+
+    weekDay_6 = 'SEXTA',
+
+    weekDay_7 = 'SÁBADO',
 }
 
 interface IOccupationsOptions {
-    option6?: string;
+    option6: string;
 }
 
 class Volunteer {
@@ -70,4 +81,6 @@ class Volunteer {
   }
 }
 
-export { Volunteer, FreeDaysOfWeek, OccupationOptions, IOccupationsOptions };
+export {
+  Volunteer, FreeDaysOfWeek, OccupationOptions, IOccupationsOptions,
+};
