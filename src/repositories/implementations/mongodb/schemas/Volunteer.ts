@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose';
-import { IVolunteer, listEnumFreeDays, listEnumOccupation } from '../VolunteerDTO';
+import { Schema, model, Model } from 'mongoose';
+import { IVolunteer, listEnumFreeDays, listEnumOccupation } from './IVolunteer';
 
 // OBS.: Saber máximos e mínimos do tamanho de strings livres
 
@@ -30,6 +30,7 @@ const schema = new Schema<IVolunteer>({
     required: true,
   },
 
+  // OBS.: Provavelmente tirar o enum (pesquisar se pode funcionar assim)
   occupation: {
     type: String,
     required: true,
@@ -84,5 +85,7 @@ const schema = new Schema<IVolunteer>({
   strict: false,
 });
 
+const VolunteerModel: Model<IVolunteer> = model<IVolunteer>('Volunteer', schema, 'volunteers');
+
 // 'volunteers' é o nome da coleção
-export default model<IVolunteer>('Volunteer', schema, 'volunteers');
+export default VolunteerModel;
