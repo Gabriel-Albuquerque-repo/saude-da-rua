@@ -4,13 +4,22 @@ import { FreeDaysOfWeek, OccupationOptions, IOccupationsOptions } from '@entitie
 
 export default interface ICreateVolunteerRequestDTO {
     fullName: string,
+
     email: string,
+
     cellphoneNumberWithDDD: string,
+
     occupation: OccupationOptions | IOccupationsOptions,
+
     expertise: string,
+
     listfreeDaysOfWeek: Array<FreeDaysOfWeek>,
+
     experienceWithHealthy: string,
+
     didParticipate: boolean,
+
     numberOfParticipation: number,
+
     howDidKnowOfSDR: string,
 }
