@@ -34,7 +34,7 @@ interface IOccupationsOptions {
 }
 
 class Volunteer {
-  public readonly id?: string;
+  public readonly _id?: string;
 
   public createdAt?: number;
 
@@ -52,7 +52,7 @@ class Volunteer {
 
   public listfreeDaysOfWeek?: Array<FreeDaysOfWeek>;
 
-  private numberOfFreeDaysOfWeek: number;
+  public numberOfFreeDaysOfWeek?: number;
 
   public experienceWithHealthy?: string;
 
@@ -62,22 +62,19 @@ class Volunteer {
 
   public howDidKnowOfSDR?: string;
 
-  private assignFreeDaysOf(): void {
-    this.numberOfFreeDaysOfWeek = this.listfreeDaysOfWeek.length;
-  }
-
-  constructor(props: Omit<Volunteer, 'id' | 'createdAt'>, id?: string, createdAt?: number) {
+  constructor(props: Omit<Volunteer, '_id' | 'createdAt'>, _id?: string, createdAt?: number) {
     Object.assign(this, props);
 
-    if (!id) {
-      this.id = uuid();
+    if (!_id) {
+      // eslint-disable-next-line no-underscore-dangle
+      this._id = uuid();
     }
 
     if (!createdAt) {
       this.createdAt = Date.now();
     }
 
-    this.assignFreeDaysOf();
+    this.numberOfFreeDaysOfWeek = this.listfreeDaysOfWeek.length;
   }
 }
 
