@@ -1,15 +1,16 @@
 /* eslint-disable import/no-unresolved */
 import { Volunteer } from '@entities/Volunteer';
 import IVolunteerRepository from '@repositories/IVolunteerRepository';
+import VolunteerModel from '@schemas/Volunteer';
 
 export default class MongoVolunteerRepository implements IVolunteerRepository {
   public async findByEmail(email: string): Promise<Volunteer> {
-    const volunteer = await
+    const volunteer = await VolunteerModel.findOne({ email }).select('_id email');
 
     return volunteer;
   }
 
-  public async saveVolunteer(volunteer: Volunteer): Promise<void> {
-
+  public saveVolunteer(volunteer: Volunteer): Promise<void> {
+    return new VolunteerModel(volunteer).save();
   }
 }
