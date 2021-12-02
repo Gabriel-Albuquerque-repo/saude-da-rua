@@ -1,8 +1,7 @@
-/* eslint-disable semi */
-// eslint-disable-next-line import/no-unresolved
 import { FreeDaysOfWeek, OccupationOptions, IOccupationsOptions } from '@entities/Volunteer';
 
-export default interface ICreateVolunteerRequestDTO {
+interface ICreateVolunteerRequestDTO {
+
     fullName: string,
 
     email: string,
@@ -22,4 +21,7 @@ export default interface ICreateVolunteerRequestDTO {
     numberOfParticipation: number,
 
     howDidKnowOfSDR: string,
+
 }
+
+export default ICreateVolunteerRequestDTO;
