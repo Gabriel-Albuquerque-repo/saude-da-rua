@@ -1,4 +1,4 @@
-/* eslint-disable import/no-unresolved */
+/* eslint-disable class-methods-use-this */
 import { Volunteer } from '@entities/Volunteer';
 import IVolunteerRepository from '@repositories/IVolunteerRepository';
 import VolunteerModel from '@schemas/Volunteer';
