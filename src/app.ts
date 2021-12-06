@@ -1,7 +1,8 @@
 import 'dotenv/config';
 import express from 'express';
+// Precisa criar uma interface para desacoplar o mongo
 import MongoConnection from '@mongoConnection';
-// import router from '@routes';
+import router from '@routes';
 
 export default class App {
   public app: express.Application;
@@ -15,7 +16,7 @@ export default class App {
 
     this.middlewares();
 
-    // this.routes();
+    this.routes();
   }
 
   private middlewares() : void {
@@ -24,7 +25,7 @@ export default class App {
     this.app.use(express.urlencoded({ extended: false }));
   }
 
-  // private routes(): void {
-  //   this.app.use(router);
-  // }
+  private routes(): void {
+    this.app.use(router);
+  }
 }
