@@ -1,15 +1,15 @@
 import 'dotenv/config';
 import express from 'express';
-// import MongoConnection from '@mongoConnection';
+import MongoConnection from '@mongoConnection';
 // import router from '@routes';
 
 export default class App {
   public app: express.Application;
 
-  // public conn : MongoConnection;
+  public conn : MongoConnection;
 
   public constructor() {
-    // this.conn = new MongoConnection();
+    this.conn = new MongoConnection();
 
     this.app = express();
 
