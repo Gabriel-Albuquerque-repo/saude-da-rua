@@ -6,9 +6,6 @@ import { IVolunteer, listEnumFreeDays, listEnumOccupation } from './IVolunteer';
 const schema = new Schema<IVolunteer>({
   _id: {
     type: String,
-    required: true,
-    trim: true,
-    unique: true,
   },
 
   fullName: {
