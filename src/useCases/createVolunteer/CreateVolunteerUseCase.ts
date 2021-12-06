@@ -1,5 +1,4 @@
 /* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
 import { Volunteer } from '@entities/Volunteer';
 import IVolunteerRepository from '@repositories/IVolunteerRepository';
 import ICreateVolunteerRequestDTO from './CreateVolunteerDTO';
