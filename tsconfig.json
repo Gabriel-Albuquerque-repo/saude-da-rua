@@ -22,7 +22,7 @@
     "baseUrl": ".",
     "paths": {
       "@app": ["src/app.ts"],
-      "@mongoConnection" : ["./src/repositories/implementations/MongoConnection.ts"],
+      "@mongoConnection" : ["./src/repositories/implementations/mongodb/MongoConnection.ts"],
       "@routes": ["src/routes.ts"],
       "@entities/*": ["src/entities/*"],
       "@schemas/*": ["src/repositories/implementations/mongodb/schemas/*"],
