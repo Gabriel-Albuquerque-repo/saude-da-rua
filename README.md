@@ -21,7 +21,9 @@
 - ts-node-dev;
 - eslint/eslint-config-airbnb-base;
 
-
 ### Aprendizados (tentando):
 - Entender os princípios SOLID e seu fluxo;
 - Manter lógica e padrão no fluxo de commits;
+
+### Futuros aprendizados (implementar no futuro):
+- Testes unitários com Jest 
