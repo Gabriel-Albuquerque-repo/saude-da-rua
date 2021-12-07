@@ -75,7 +75,7 @@ const schema = new Schema<IVolunteer>({
 
   howDidknowOfSDR: {
     type: String,
-    required: true,
+    // required: true,
   },
 }, {
   timestamps: true,
