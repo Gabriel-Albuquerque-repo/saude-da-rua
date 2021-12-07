@@ -12,4 +12,4 @@ const createVolunteerController = new CreateVolunteerController(
   createVolunteerUseCase,
 );
 
-export default createVolunteerController;
+export { createVolunteerUseCase, createVolunteerController };
