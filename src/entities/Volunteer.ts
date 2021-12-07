@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 
 enum OccupationOptions {
   occupation_1 = 'MÉDICO(A)',
@@ -62,15 +62,15 @@ class Volunteer {
 
   public howDidKnowOfSDR?: string;
 
-  constructor(props: Omit<Volunteer, '_id' | 'createdAt'>, _id?: string, createdAt?: number) {
+  constructor(props: Omit<Volunteer, '_id' | 'createdAt'>, _id?: string, updatedAt?: number) {
     Object.assign(this, props);
 
     if (!_id) {
       // eslint-disable-next-line no-underscore-dangle
-      this._id = uuid();
+      this._id = uuidv4();
     }
 
-    if (!createdAt) {
+    if (!this.createdAt) {
       this.createdAt = Date.now();
     }
 
