@@ -36,10 +36,12 @@ export default class CreateVolunteerController {
         howDidKnowOfSDR,
       });
 
-      return response.status(200).send('Voluntário cadastrado!');
+      return response.status(201).json({
+        SucessMessage: `Voluntário ${request.body.fullName} cadastrado!`,
+      });
     } catch (err) {
       return response.status(400).json({
-        message: err.message || 'Unexpected error.',
+        ErrorMessage: err.message || 'Unexpected error.',
       });
     }
   }
