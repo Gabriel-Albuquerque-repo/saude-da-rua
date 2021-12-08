@@ -12,7 +12,7 @@
 ### Dependências externas(yarn):
 - Express;
 - mongoose;
-- uuidv4;
+- uuidv;
 - dotenv;
 
 ### Dependências de desenvolvimento(yarn):
@@ -21,9 +21,9 @@
 - ts-node-dev;
 - eslint/eslint-config-airbnb-base;
 
-### Aprendizados (tentando):
-- Entender os princípios SOLID e seu fluxo;
-- Manter lógica e padrão no fluxo de commits;
+### Aprendizados:
+- Princípios SOLID e seu fluxo;
+- Lógica e padrão no fluxo de commits;
 
 ### Futuros aprendizados (implementar no futuro):
 - Testes unitários com Jest 
