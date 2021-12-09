@@ -22,7 +22,7 @@ export default class App {
   private middlewares() : void {
     this.app.use(express.json());
 
-    this.app.use(express.urlencoded({ extended: false }));
+    this.app.use(express.urlencoded({ extended: true }));
   }
 
   private routes(): void {
