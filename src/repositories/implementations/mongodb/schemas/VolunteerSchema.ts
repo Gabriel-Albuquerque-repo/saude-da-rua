@@ -19,6 +19,7 @@ const schema = new Schema<IVolunteerSchema>({
     trim: true,
     required: true,
     unique: true,
+    lowercase: true,
   },
 
   cellphoneNumberWithDDD: {
