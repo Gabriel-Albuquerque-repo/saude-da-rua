@@ -2,7 +2,7 @@ import { Volunteer } from '@entities/Volunteer';
 import IVolunteerRepository from '@repositories/interfaces/IVolunteerRepository';
 import ICreateVolunteerRequestDTO from './CreateVolunteerDTO';
 
-export default class CreateVolunteerUseCase {
+class CreateVolunteerUseCase {
   private volunteerRepository: IVolunteerRepository;
 
   constructor(volunteerRepository: IVolunteerRepository) {
@@ -16,8 +16,10 @@ export default class CreateVolunteerUseCase {
       throw new Error('Volunteer already exists / Voluntário já existe');
     }
 
-    const volunteer = new Volunteer(data);
+    const newVolunteer = new Volunteer(data);
 
-    await this.volunteerRepository.saveVolunteer(volunteer);
+    await this.volunteerRepository.saveVolunteer(newVolunteer);
   }
 }
+
+export default CreateVolunteerUseCase;

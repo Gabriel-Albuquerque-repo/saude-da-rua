@@ -4,12 +4,8 @@ import CreateVolunteerController from '@useCases/createVolunteer/CreateVolunteer
 
 const mongoVolunteerRepository = new MongoVolunteerRepository();
 
-const createVolunteerUseCase = new CreateVolunteerUseCase(
-  mongoVolunteerRepository,
-);
+const createVolunteerUseCase = new CreateVolunteerUseCase(mongoVolunteerRepository);
 
-const createVolunteerController = new CreateVolunteerController(
-  createVolunteerUseCase,
-);
+const createVolunteerController = new CreateVolunteerController(createVolunteerUseCase);
 
 export { createVolunteerUseCase, createVolunteerController };

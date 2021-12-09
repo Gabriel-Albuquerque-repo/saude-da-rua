@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import CreateVolunteerUseCase from './CreateVolunteerUseCase';
 
-export default class CreateVolunteerController {
+class CreateVolunteerController {
   private createVolunteerUseCase: CreateVolunteerUseCase;
 
   constructor(createVolunteerUseCase: CreateVolunteerUseCase) {
@@ -46,3 +46,5 @@ export default class CreateVolunteerController {
     }
   }
 }
+
+export default CreateVolunteerController;
