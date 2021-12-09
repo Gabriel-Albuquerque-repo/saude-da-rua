@@ -36,9 +36,9 @@ interface IOccupationsOptions {
 class Volunteer {
   public readonly _id?: string;
 
-  public createdAt?: number;
+  public readonly createdAt?: number;
 
-  public updatedAt?: number;
+  public readonly updatedAt?: number;
 
   public fullName?: string;
 
@@ -60,9 +60,9 @@ class Volunteer {
 
   public numberOfParticipation?: number;
 
-  public howDidKnowOfSDR?: string;
+  public howDidknowOfSDR?: string;
 
-  constructor(props: Omit<Volunteer, '_id' | 'createdAt'>, _id?: string, updatedAt?: number) {
+  constructor(props: Omit<Volunteer, '_id' | 'createdAt' | 'updatedAt'>, _id?: string, createdAt?: number, updatedAt?: number) {
     Object.assign(this, props);
 
     if (!_id) {
@@ -70,8 +70,12 @@ class Volunteer {
       this._id = uuidv4();
     }
 
-    if (!this.createdAt) {
+    if (!createdAt) {
       this.createdAt = Date.now();
+    }
+
+    if (!updatedAt) {
+      this.updatedAt = Date.now();
     }
 
     this.numberOfFreeDaysOfWeek = this.listfreeDaysOfWeek.length;
