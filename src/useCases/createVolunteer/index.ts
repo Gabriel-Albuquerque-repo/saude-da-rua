@@ -1,4 +1,4 @@
-import MongoVolunteerRepository from '@repositories/implementations/mongodb/MongoVolunteerRepository';
+import MongoVolunteerRepository from '@repositories/implementations/mongodb/repository/MongoVolunteerRepository';
 import CreateVolunteerUseCase from '@useCases/createVolunteer/CreateVolunteerUseCase';
 import CreateVolunteerController from '@useCases/createVolunteer/CreateVolunteerController';
 

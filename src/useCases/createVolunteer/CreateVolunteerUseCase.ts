@@ -1,5 +1,5 @@
 import { Volunteer } from '@entities/Volunteer';
-import IVolunteerRepository from '@repositories/IVolunteerRepository';
+import IVolunteerRepository from '@repositories/interfaces/IVolunteerRepository';
 import ICreateVolunteerRequestDTO from './CreateVolunteerDTO';
 
 export default class CreateVolunteerUseCase {

@@ -1,9 +1,9 @@
 import { Schema, model, Model } from 'mongoose';
-import { IVolunteer, listEnumFreeDays, listEnumOccupation } from './IVolunteer';
+import { IVolunteerSchema, listEnumFreeDays, listEnumOccupation } from './interfaces/IVolunteerSchema';
 
 // OBS.: Saber máximos e mínimos do tamanho de strings livres
 
-const schema = new Schema<IVolunteer>({
+const schema = new Schema<IVolunteerSchema>({
   _id: {
     type: String,
   },
@@ -82,7 +82,6 @@ const schema = new Schema<IVolunteer>({
   strict: false,
 });
 
-const VolunteerModel: Model<IVolunteer> = model<IVolunteer>('Volunteer', schema, 'volunteers');
+const VolunteerModel: Model<IVolunteerSchema> = model<IVolunteerSchema>('Volunteer', schema, 'volunteers');
 
-// 'volunteers' é o nome da coleção
 export default VolunteerModel;

@@ -1,6 +1,6 @@
 import { FreeDaysOfWeek, OccupationOptions, IOccupationsOptions } from '@entities/Volunteer';
 
-interface IVolunteer {
+interface IVolunteerSchema {
     _id: string,
 
     fullName: string,
@@ -23,7 +23,7 @@ interface IVolunteer {
 
     numberOfParticipation: number,
 
-    howDidknowOfSDR: string
+    howDidknowOfSDR?: string
 }
 
 // Pega as opções dos enums que vêm da entidade Volunteer
@@ -32,4 +32,4 @@ const listEnumOccupation: Array<string> = Object.values(OccupationOptions);
 
 const listEnumFreeDays: Array<string> = Object.values(FreeDaysOfWeek);
 
-export { IVolunteer, listEnumOccupation, listEnumFreeDays };
+export { IVolunteerSchema, listEnumOccupation, listEnumFreeDays };
