@@ -26,4 +26,6 @@
 - Lógica e padrão no fluxo de commits;
 
 ### Futuros aprendizados (implementar no futuro):
-- Testes unitários com Jest 
+- Testes unitários com Jest;
+- Validações com Join;
+- Documentação com jsdocks;
