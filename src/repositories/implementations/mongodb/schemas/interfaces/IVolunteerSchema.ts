@@ -3,6 +3,10 @@ import { FreeDaysOfWeek, OccupationOptions, IOccupationsOptions } from '@entitie
 interface IVolunteerSchema {
     _id: string,
 
+    createdAt: Date,
+
+    updatedAt: Date,
+
     fullName: string,
 
     email: string,
