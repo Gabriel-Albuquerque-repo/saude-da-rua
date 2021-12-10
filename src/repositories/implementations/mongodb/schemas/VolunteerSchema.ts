@@ -8,10 +8,22 @@ const schema = new Schema<IVolunteerSchema>({
     type: String,
   },
 
+  createdAt: {
+    type: Date,
+    required: true,
+  },
+
+  updatedAt: {
+    type: Date,
+    required: true,
+  },
+
   fullName: {
     type: String,
     required: true,
     trim: true,
+    // minLength: ,
+    // maxLength: ,
   },
 
   email: {
@@ -20,12 +32,21 @@ const schema = new Schema<IVolunteerSchema>({
     required: true,
     unique: true,
     lowercase: true,
+    match: [
+      /^\w+([.\-_]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+      'Email inválido!',
+    ],
   },
 
   cellphoneNumberWithDDD: {
     type: String,
-    trim: true,
     required: true,
+    minlength: 14,
+    maxlength: [14, 'O número deve ter formatação (xx) 9xxxx-xxxx'],
+    match: [
+      /^\([1-9]{2}\) 9[1-9][0-9]{3}-[0-9]{4}$/,
+      'Número inválido',
+    ],
   },
 
   // OBS.: Provavelmente tirar o enum (pesquisar se pode funcionar assim)
@@ -45,15 +66,18 @@ const schema = new Schema<IVolunteerSchema>({
     {
       type: String,
       required: true,
-      enum: listEnumFreeDays,
+      enum: {
+        values: listEnumFreeDays,
+        message: '{VALUE} não é uma opção válida',
+      },
     },
   ],
 
   numberOfFreeDaysOfWeek: {
     type: Number,
     required: true,
-    min: 1,
-    max: 7,
+    min: [1, 'Ao menos 1 dia deve ser livre.'],
+    max: [7, 'No máximo 7 dias devem ser livres.'],
   },
 
   experienceWithHealthy: {
@@ -70,8 +94,7 @@ const schema = new Schema<IVolunteerSchema>({
   numberOfParticipation: {
     type: Number,
     required: true,
-    min: 0,
-    max: 99,
+    min: [0, 'O número de participações precisa ser igual ou maior que 0'],
   },
 
   howDidknowOfSDR: {
@@ -79,7 +102,7 @@ const schema = new Schema<IVolunteerSchema>({
     // required: true,
   },
 }, {
-  timestamps: true,
+  timestamps: false,
   strict: false,
 });
 
