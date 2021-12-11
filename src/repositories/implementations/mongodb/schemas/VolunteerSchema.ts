@@ -41,8 +41,8 @@ const schema = new Schema<IVolunteerSchema>({
   cellphoneNumberWithDDD: {
     type: String,
     required: true,
-    minlength: 14,
-    maxlength: [14, 'O número deve ter formatação (xx) 9xxxx-xxxx'],
+    minlength: 15,
+    maxlength: [15, 'O número deve ter formatação (xx) 9xxxx-xxxx e deve exatamente 15 caracteres'],
     match: [
       /^\([1-9]{2}\) 9[1-9][0-9]{3}-[0-9]{4}$/,
       'Número inválido',
