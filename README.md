@@ -14,6 +14,7 @@
 - mongoose;
 - uuidv;
 - dotenv;
+- Joi;
 
 ### Dependências de desenvolvimento(yarn):
 - babel;
@@ -24,8 +25,9 @@
 ### Aprendizados:
 - Princípios SOLID e seu fluxo;
 - Lógica e padrão no fluxo de commits;
+- Express-joi-validation aparentemente precisa estar injetado
+nas rotas, então não foi possível separar na camada utils.
 
 ### Futuros aprendizados (implementar no futuro):
 - Testes unitários com Jest;
-- Validações com Join;
 - Documentação com jsdocks;
