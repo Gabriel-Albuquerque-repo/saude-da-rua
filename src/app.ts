@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
-// Precisa criar uma interface para desacoplar o mongo
+// Precisa criar uma interface para desacoplar o mongo?
 import MongoConnection from '@mongoConnection';
 import router from '@routes';
 

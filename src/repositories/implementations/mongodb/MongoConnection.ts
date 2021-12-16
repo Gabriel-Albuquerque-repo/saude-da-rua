@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import mongoose from 'mongoose';
 
-export default class MongoConnection {
+class MongoConnection {
   private stringConnect = process.env.MONGO_CONNECTION_STRING;
 
   public constructor() {
@@ -32,3 +32,5 @@ export default class MongoConnection {
     });
   }
 }
+
+export default MongoConnection;
