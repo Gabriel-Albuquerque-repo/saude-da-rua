@@ -10,9 +10,9 @@ Padronizar o createdAt / updatedAt
     - Consertar Erro gerado pelo createdAt/updatedAt do tipo Date (Schema)
 
 Validação
-    - Tentando validar usando SOLID
+    - Tentando validar usando SOLID (FEITO)
     https://nanofaroque.medium.com/solid-code-in-nodejs-a87685b4cdfe
-
+    - Validar melhor email usando regex em vez da função email
 
 Padrões de commit para iniciar no próximo projeto
     - https://sparkbox.com/foundry/semantic_commit_messages
