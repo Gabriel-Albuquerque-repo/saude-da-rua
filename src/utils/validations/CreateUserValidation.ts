@@ -17,35 +17,83 @@ class CreateUserValidation {
   }
 
   async validateInput() {
-    // const validation = createValidator();
     const schema = Joi.object().keys({
-      fullName: Joi.required(),
+      id: Joi
+        .forbidden(),
 
-      email: Joi.required(),
+      _id: Joi
+        .forbidden(),
 
-      cellphoneNumberWithDDD: Joi.required(),
+      fullName: Joi
+        .string()
+        .trim()
+        .required(),
 
-      occupation: Joi.required(),
+      email: Joi
+        .string()
+        .email({
+          tlds: {
+            allow: ['com', 'br', 'net'],
+          },
+        })
+        .lowercase()
+        .trim()
+        .required(),
 
-      expertise: Joi.required(),
+      cellphoneNumberWithDDD: Joi
+        .string()
+        .pattern(/^\([1-9]{2}\) 9[1-9][0-9]{3}-[0-9]{4}$/, '(xx) 9xxxx-xxxx')
+        .required(),
 
-      listfreeDaysOfWeek: Joi.required(),
+      occupation: Joi
+        .required(),
 
-      experienceWithHealthy: Joi.required(),
+      expertise: Joi
+        .required(),
 
-      didParticipate: Joi.required(),
+      listfreeDaysOfWeek: Joi
+        .required(),
 
-      numberOfParticipation: Joi.required(),
+      experienceWithHealthy: Joi
+        .string()
+        .required(),
 
-      howDidKnowOfSDR: Joi.required(),
+      didParticipate: Joi
+        .boolean()
+        .required(),
+
+      numberOfParticipation: Joi
+        .number()
+        .integer()
+        .min(0)
+        .max(100)
+        .required(),
+
+      howDidKnowOfSDR: Joi
+        .string()
+        .required(),
     });
 
     try {
-      await schema.validateAsync(this.request.body);
+      const validatedBody = await schema.validateAsync(this.request.body);
 
-      this.next();
+      this.request.body = validatedBody;
+
+      return this.next();
     } catch (error) {
-      this.response.status(400).json({ ErrorMessage: error.details[0].message });
+      if (error.details[0].path[0] === 'id') {
+        return this.response
+          .status(403)
+          .json(
+            { ErrorMessage: error.details[0].message },
+          );
+      }
+
+      return this.response
+        .status(400)
+        .json(
+          { ErrorMessage: error.details[0].message, err: error },
+        );
     }
   }
 }
