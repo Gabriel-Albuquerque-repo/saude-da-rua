@@ -1,5 +1,6 @@
 import * as Joi from 'joi';
 import { Request, Response, NextFunction } from 'express';
+import { OccupationOptions, FreeDaysOfWeek } from '@entities/Volunteer';
 
 class CreateUserValidation {
   public request: Request;
@@ -46,13 +47,21 @@ class CreateUserValidation {
         .required(),
 
       occupation: Joi
+        .string()
+        .valid(...Object.values(OccupationOptions))
         .required(),
 
       expertise: Joi
+        .string()
         .required(),
 
-      listfreeDaysOfWeek: Joi
-        .required(),
+      listFreeDaysOfWeek: Joi
+        .array()
+        .unique()
+        .max(7)
+        .min(1)
+        .items(Joi.string().valid(...Object.values(FreeDaysOfWeek))),
+      // .required(),
 
       experienceWithHealthy: Joi
         .string()
@@ -81,7 +90,7 @@ class CreateUserValidation {
 
       return this.next();
     } catch (error) {
-      if (error.details[0].path[0] === 'id') {
+      if (error.details[0].path[0] === 'id' || error.details[0].path[0] === '_id') {
         return this.response
           .status(403)
           .json(
