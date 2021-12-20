@@ -50,7 +50,8 @@ class Volunteer {
 
   public expertise?: string;
 
-  public listfreeDaysOfWeek?: Array<FreeDaysOfWeek>;
+  // Utilizando undefined para não salvar o campo como [] no mongodb
+  public listFreeDaysOfWeek?: Array<FreeDaysOfWeek> | undefined;
 
   public numberOfFreeDaysOfWeek?: number;
 
@@ -62,23 +63,23 @@ class Volunteer {
 
   public howDidknowOfSDR?: string;
 
-  constructor(props: Omit<Volunteer, '_id' | 'createdAt' | 'updatedAt'>, _id?: string, createdAt?: number, updatedAt?: number) {
+  constructor(
+    props: Omit<Volunteer, '_id' | 'createdAt' | 'updatedAt' | 'listFreeDaysOfWeek' >,
+    _id?: string,
+    createdAt?: number,
+    updatedAt?: number,
+    listFreeDaysOfWeek?: Array<FreeDaysOfWeek> | undefined,
+  ) {
     Object.assign(this, props);
 
-    if (!_id) {
-      // eslint-disable-next-line no-underscore-dangle
-      this._id = uuidv4();
-    }
+    // eslint-disable-next-line no-underscore-dangle
+    if (!_id) this._id = uuidv4();
 
-    if (!createdAt) {
-      this.createdAt = Date.now();
-    }
+    if (!createdAt) this.createdAt = Date.now();
 
-    if (!updatedAt) {
-      this.updatedAt = Date.now();
-    }
+    if (!updatedAt) this.updatedAt = Date.now();
 
-    this.numberOfFreeDaysOfWeek = this.listfreeDaysOfWeek.length;
+    if (listFreeDaysOfWeek) this.numberOfFreeDaysOfWeek = this.listFreeDaysOfWeek.length;
   }
 }
 
