@@ -21,7 +21,7 @@ class CreateVolunteerController {
 
       expertise: string,
 
-      listFreeDaysOfWeek?: Array<FreeDaysOfWeek>,
+      listFreeDaysOfWeek?: Array<FreeDaysOfWeek> | undefined,
 
       experienceWithHealthy: string,
 
