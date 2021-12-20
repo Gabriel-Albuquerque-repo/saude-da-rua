@@ -13,6 +13,7 @@ Validação
     - Tentando validar usando SOLID (FEITO)
     https://nanofaroque.medium.com/solid-code-in-nodejs-a87685b4cdfe
     - Validar melhor email usando regex em vez da função email
+    - Validar no schema do mongoose para impedir que listFreeDaysOfWeek possa receber um array vazio
 
 Padrões de commit para iniciar no próximo projeto
     - https://sparkbox.com/foundry/semantic_commit_messages
