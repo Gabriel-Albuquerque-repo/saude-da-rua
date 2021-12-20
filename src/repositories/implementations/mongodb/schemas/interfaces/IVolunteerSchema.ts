@@ -17,9 +17,9 @@ interface IVolunteerSchema {
 
     expertise: string,
 
-    listfreeDaysOfWeek: Array<FreeDaysOfWeek>,
+    listFreeDaysOfWeek?: Array<FreeDaysOfWeek> | undefined,
 
-    numberOfFreeDaysOfWeek: number,
+    numberOfFreeDaysOfWeek?: number,
 
     experienceWithHealthy: string,
 

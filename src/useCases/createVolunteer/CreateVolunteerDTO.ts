@@ -12,7 +12,7 @@ interface ICreateVolunteerRequestDTO {
 
     expertise: string,
 
-    listfreeDaysOfWeek: Array<FreeDaysOfWeek>,
+    listFreeDaysOfWeek?: Array<FreeDaysOfWeek> | undefined,
 
     experienceWithHealthy: string,
 
