@@ -15,5 +15,12 @@ Validação
     - Validar melhor email usando regex em vez da função email
     - Validar no schema do mongoose para impedir que listFreeDaysOfWeek possa receber um array vazio
 
+Factory pattern
+    - Trocar o index.ts para o padrão Factory
+
+Problema no build do babel
+    - Não consegue resolver os imports dos @ de um arquivo específico, por exemplo,
+    '@app': 'src/app.js' e '@routes': 'src/routes.ts'
+
 Padrões de commit para iniciar no próximo projeto
     - https://sparkbox.com/foundry/semantic_commit_messages
