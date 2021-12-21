@@ -1,4 +1,4 @@
-import { FreeDaysOfWeek, OccupationOptions, IOccupationsOptions } from '@entities/Volunteer';
+import { FreeDaysOfWeek, OccupationOptions } from '@entities/Volunteer';
 
 interface IVolunteerSchema {
     _id: string,
@@ -13,7 +13,7 @@ interface IVolunteerSchema {
 
     cellphoneNumberWithDDD: string,
 
-    occupation: OccupationOptions | IOccupationsOptions,
+    occupation: OccupationOptions | string,
 
     expertise: string,
 

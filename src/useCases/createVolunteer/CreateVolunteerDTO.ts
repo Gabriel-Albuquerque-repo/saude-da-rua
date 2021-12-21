@@ -1,4 +1,4 @@
-import { FreeDaysOfWeek, OccupationOptions, IOccupationsOptions } from '@entities/Volunteer';
+import { FreeDaysOfWeek, OccupationOptions } from '@entities/Volunteer';
 
 interface ICreateVolunteerRequestDTO {
 
@@ -8,7 +8,7 @@ interface ICreateVolunteerRequestDTO {
 
     cellphoneNumberWithDDD: string,
 
-    occupation: OccupationOptions | IOccupationsOptions,
+    occupation: OccupationOptions | string,
 
     expertise: string,
 

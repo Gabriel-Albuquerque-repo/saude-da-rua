@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { FreeDaysOfWeek, OccupationOptions, IOccupationsOptions } from '@entities/Volunteer';
+import { FreeDaysOfWeek, OccupationOptions } from '@entities/Volunteer';
 import CreateVolunteerUseCase from './CreateVolunteerUseCase';
 
 class CreateVolunteerController {
@@ -17,7 +17,7 @@ class CreateVolunteerController {
 
       cellphoneNumberWithDDD: string,
 
-      occupation: OccupationOptions | IOccupationsOptions,
+      occupation: OccupationOptions | string,
 
       expertise: string,
 
