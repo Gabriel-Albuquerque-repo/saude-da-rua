@@ -11,8 +11,8 @@ class MongoVolunteerRepository implements IVolunteerRepository {
     return volunteer;
   }
 
-  public saveVolunteer(volunteer: Volunteer): Promise<void> {
-    new VolunteerModel(volunteer).save();
+  public async saveVolunteer(volunteer: Volunteer): Promise<void> {
+    await new VolunteerModel(volunteer).save();
 
     return;
   }
