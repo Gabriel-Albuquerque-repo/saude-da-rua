@@ -62,20 +62,20 @@ const schema = new Schema<IVolunteerSchema>({
     required: true,
   },
 
-  listfreeDaysOfWeek: [
-    {
+  listFreeDaysOfWeek: {
+    type: [{
       type: String,
-      required: true,
       enum: {
         values: listEnumFreeDays,
         message: '{VALUE} não é uma opção válida',
       },
-    },
-  ],
+      required: true,
+    }],
+    default: undefined,
+  },
 
   numberOfFreeDaysOfWeek: {
     type: Number,
-    required: true,
     min: [1, 'Ao menos 1 dia deve ser livre.'],
     max: [7, 'No máximo 7 dias devem ser livres.'],
   },
