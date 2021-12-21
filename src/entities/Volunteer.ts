@@ -2,35 +2,31 @@
 import { v4 as uuidv4 } from 'uuid';
 
 enum OccupationOptions {
-  occupation_1 = 'MÉDICO(A)',
+  MEDICO = 'MÉDICO(A)',
 
-  occupation_2 = 'ENFERMEIRO(A)',
+  ENFERMEIRO = 'ENFERMEIRO(A)',
 
-  occupation_3 = 'FARMACÊUTICO(A)',
+  FARMACEUTICO = 'FARMACÊUTICO(A)',
 
-  occupation_4 = 'ESTUDANTE DE MEDICINA',
+  ESTUDANTE_MEDICINA = 'ESTUDANTE DE MEDICINA',
 
-  occupation_5 = 'ESTUDANTE DE ENFERMAGEM',
+  ESTUDANTE_ENFERMAGEM = 'ESTUDANTE DE ENFERMAGEM',
 }
 
 enum FreeDaysOfWeek {
-    weekDay_1 = 'DOMINGO',
+    DOMINGO = 'DOMINGO',
 
-    weekDay_2 = 'SEGUNDA',
+    SEGUNDA = 'SEGUNDA',
 
-    weekDay_3 = 'TERÇA',
+    TERCA = 'TERÇA',
 
-    weekDay_4 = 'QUARTA',
+    QUARTA = 'QUARTA',
 
-    weekDay_5 = 'QUINTA',
+    QUINTA = 'QUINTA',
 
-    weekDay_6 = 'SEXTA',
+    SEXTA = 'SEXTA',
 
-    weekDay_7 = 'SÁBADO',
-}
-
-interface IOccupationsOptions {
-    option6: string;
+    SABADO = 'SÁBADO',
 }
 
 class Volunteer {
@@ -46,7 +42,7 @@ class Volunteer {
 
   public cellphoneNumberWithDDD?: string;
 
-  public occupation?: OccupationOptions | IOccupationsOptions;
+  public occupation?: OccupationOptions | string;
 
   public expertise?: string;
 
@@ -83,6 +79,4 @@ class Volunteer {
   }
 }
 
-export {
-  Volunteer, FreeDaysOfWeek, OccupationOptions, IOccupationsOptions,
-};
+export { Volunteer, FreeDaysOfWeek, OccupationOptions };
