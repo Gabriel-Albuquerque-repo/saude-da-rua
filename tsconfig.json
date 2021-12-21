@@ -31,8 +31,10 @@
       "@repositories/*": ["./src/repositories/*"]
     }
   },
+  "include": [
+    "src/**/*.ts"
+  ],
   "exclude": [
     "./babel.config.js"
-    // "./built/**/*"
   ]
 }
