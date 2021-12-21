@@ -15,6 +15,7 @@
 - uuidv;
 - dotenv;
 - Joi;
+- Jest;
 
 ### Dependências de desenvolvimento(yarn):
 - babel;
@@ -29,5 +30,4 @@
 nas rotas, então não foi possível separar na camada utils.
 
 ### Futuros aprendizados (implementar no futuro):
-- Testes unitários com Jest;
 - Documentação com jsdocks;
