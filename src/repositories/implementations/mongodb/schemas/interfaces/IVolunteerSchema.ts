@@ -27,7 +27,7 @@ interface IVolunteerSchema {
 
     numberOfParticipation: number,
 
-    howDidknowOfSDR?: string
+    howDidKnowOfSDR?: string
 }
 
 // Pega as opções dos enums que vêm da entidade Volunteer

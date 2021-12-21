@@ -97,9 +97,9 @@ const schema = new Schema<IVolunteerSchema>({
     min: [0, 'O número de participações precisa ser igual ou maior que 0'],
   },
 
-  howDidknowOfSDR: {
+  howDidKnowOfSDR: {
     type: String,
-    // required: true,
+    required: true,
   },
 }, {
   timestamps: false,

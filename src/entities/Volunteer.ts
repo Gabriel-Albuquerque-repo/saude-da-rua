@@ -57,7 +57,7 @@ class Volunteer {
 
   public numberOfParticipation?: number;
 
-  public howDidknowOfSDR?: string;
+  public howDidKnowOfSDR?: string;
 
   constructor(
     props: Omit<Volunteer, '_id' | 'createdAt' | 'updatedAt' | 'listFreeDaysOfWeek' >,
