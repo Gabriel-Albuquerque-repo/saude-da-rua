@@ -32,9 +32,9 @@ enum FreeDaysOfWeek {
 class Volunteer {
   public readonly _id?: string;
 
-  public readonly createdAt?: number;
+  public readonly createdAt?: Date;
 
-  public readonly updatedAt?: number;
+  public readonly updatedAt?: Date;
 
   public fullName?: string;
 
@@ -46,7 +46,6 @@ class Volunteer {
 
   public expertise?: string;
 
-  // Utilizando undefined para não salvar o campo como [] no mongodb
   public listFreeDaysOfWeek?: Array<FreeDaysOfWeek> | undefined;
 
   public numberOfFreeDaysOfWeek?: number;
@@ -71,9 +70,9 @@ class Volunteer {
     // eslint-disable-next-line no-underscore-dangle
     if (!_id) this._id = uuidv4();
 
-    if (!createdAt) this.createdAt = Date.now();
+    if (!createdAt) this.createdAt = new Date();
 
-    if (!updatedAt) this.updatedAt = Date.now();
+    if (!updatedAt) this.updatedAt = new Date();
 
     if (listFreeDaysOfWeek) this.numberOfFreeDaysOfWeek = this.listFreeDaysOfWeek.length;
   }
