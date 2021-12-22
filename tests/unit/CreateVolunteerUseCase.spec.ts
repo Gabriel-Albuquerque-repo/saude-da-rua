@@ -1,7 +1,7 @@
-import { OccupationOptions, FreeDaysOfWeek } from '@entities/Volunteer';
-import ICreateVolunteerRequestDTO from '@useCases/createVolunteer/CreateVolunteerDTO';
-import MongoVolunteerRepository from '@repositories/implementations/mongodb/repository/MongoVolunteerRepository';
-import CreateVolunteerUseCase from './CreateVolunteerUseCase';
+import MongoVolunteerRepository from '../../src/repositories/implementations/mongodb/repository/MongoVolunteerRepository';
+import { OccupationOptions, FreeDaysOfWeek } from '../../src/entities/Volunteer';
+import ICreateVolunteerRequestDTO from '../../src/useCases/createVolunteer/CreateVolunteerDTO';
+import CreateVolunteerUseCase from '../../src/useCases/createVolunteer/CreateVolunteerUseCase';
 
 describe('Create volunteer', () => {
   it('should be able to create a new volunteer', async () => {
