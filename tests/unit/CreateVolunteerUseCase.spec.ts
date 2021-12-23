@@ -4,7 +4,7 @@ import ICreateVolunteerRequestDTO from '../../src/useCases/createVolunteer/Creat
 import CreateVolunteerUseCase from '../../src/useCases/createVolunteer/CreateVolunteerUseCase';
 import IVolunteerRepository from '../../src/repositories/interfaces/IVolunteerRepository';
 
-describe('Create volunteer', () => {
+describe('Create volunteer UseCase', () => {
   let volunteersRepositoryInMemory: IVolunteerRepository;
   let createVolunteerUseCase: CreateVolunteerUseCase;
 
