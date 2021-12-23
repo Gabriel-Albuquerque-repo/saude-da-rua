@@ -31,3 +31,4 @@ nas rotas, então não foi possível separar na camada utils.
 
 ### Futuros aprendizados (implementar no futuro):
 - Documentação com jsdocks;
+- Documentação com Swagger;
