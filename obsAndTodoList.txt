@@ -2,12 +2,12 @@ Pq o quando tem erro de validação que, vem do mongodb, o server crasha? (FALTO
     - Tentar validar dentro do schema pra ver se resolve (NÃO RESOLVEU)
     - Receber o erro do save e jogar dentro de uma variável dps fazer lançamento de erro (RESOLVE)
 
-Padronizar o createdAt / updatedAt 
+Padronizar o createdAt / updatedAt (TROCAR A GERAÇÃO DA DATA QUE VEM DA ENTIDADE VOLUNTÁRIO)
     - Deixar o createdAt e updatedAt a cargo da criação
     da entity e não do mongoose, porém deixar formatado no 
     mongodb que nem da forma do timestamps (FEITO)
     https://stackoverflow.com/questions/7443142/how-do-i-format-dates-from-mongoose-in-node-js 
-    - Consertar Erro gerado pelo createdAt/updatedAt do tipo Date no Schema
+    - Consertar Erro gerado pelo createdAt/updatedAt do tipo Date no Schema (FEITO)
 
 Validação
     - Tentando validar usando SOLID (FEITO)
@@ -22,8 +22,14 @@ Problema no build do babel
     - Não consegue resolver os imports dos @ de um arquivo específico, por exemplo,
     '@app': 'src/app.js' e '@routes': 'src/routes.ts'
 
-Quantidade de erros restantes: 2
+Quantidade de erros restantes: 1
 Quantidade de "todos" restantes: 3
+
+OBSERVAÇÕES:
+
+Retorno do repositórios de produção
+    - É melhor retornar void em vez de um boolean tanto nas interfaces quanto na própria implementação,
+    pensando em performance, já que os dados não precisam ser retornados quando são salvos.
 
 Padrões de commit para iniciar no próximo projeto
     - https://sparkbox.com/foundry/semantic_commit_messages
