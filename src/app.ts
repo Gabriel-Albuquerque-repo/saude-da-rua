@@ -3,7 +3,7 @@ import express from 'express';
 import MongoConnection from '@mongoConnection';
 import router from '@routes';
 
-export default class App {
+class App {
   public app: express.Application;
 
   public conn : MongoConnection;
@@ -28,3 +28,5 @@ export default class App {
     this.app.use(router);
   }
 }
+
+export default App;
