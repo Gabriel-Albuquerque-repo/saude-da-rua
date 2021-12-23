@@ -10,7 +10,7 @@ class CreateVolunteerUseCase {
   }
 
   async execute(data: ICreateVolunteerRequestDTO) {
-    const volunteerAlreadyExists = await this.volunteerRepository.findByEmail(data.email);
+    const volunteerAlreadyExists: boolean = await this.volunteerRepository.findByEmail(data.email);
 
     if (volunteerAlreadyExists) {
       throw new Error('Volunteer already exists / Voluntário já existe');
@@ -18,7 +18,11 @@ class CreateVolunteerUseCase {
 
     const newVolunteer = new Volunteer(data);
 
-    await this.volunteerRepository.saveVolunteer(newVolunteer);
+    // eslint-disable-next-line operator-linebreak
+    const checkIfWasSavedUseCase: boolean =
+     await this.volunteerRepository.saveVolunteer(newVolunteer);
+
+    return !!checkIfWasSavedUseCase;
   }
 }
 

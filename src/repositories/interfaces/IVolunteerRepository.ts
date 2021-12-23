@@ -2,8 +2,9 @@
 import { Volunteer } from '@entities/Volunteer';
 
 interface IVolunteerRepository {
-    findByEmail(email: string): Promise<Volunteer>;
-    saveVolunteer(volunteer: Volunteer): Promise<void>;
+    findByEmail(email: string): Promise<boolean>;
+    // Em produção, é melhor usar o void
+    saveVolunteer(volunteer: Volunteer): Promise<boolean>;
 }
 
 export default IVolunteerRepository;
