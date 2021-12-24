@@ -9,7 +9,9 @@ class App {
   public conn : MongoConnection;
 
   public constructor() {
-    this.conn = new MongoConnection();
+    if (process.env.NODE_ENV !== 'test') {
+      this.conn = new MongoConnection();
+    }
 
     this.app = express();
 
