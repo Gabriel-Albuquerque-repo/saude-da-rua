@@ -1,6 +1,6 @@
-import { Volunteer } from '../src/entities/Volunteer';
-import IVolunteerRepository from '../src/repositories/interfaces/IVolunteerRepository';
-import ICreateVolunteerRequestDTO from '../src/useCases/createVolunteer/CreateVolunteerDTO';
+import { Volunteer } from '../../src/entities/Volunteer';
+import IVolunteerRepository from '../../src/repositories/interfaces/IVolunteerRepository';
+import ICreateVolunteerRequestDTO from '../../src/useCases/createVolunteer/CreateVolunteerDTO';
 
 class VolunteerRepositoryInMemory implements IVolunteerRepository {
   private volunteer: Array<Volunteer> = [];

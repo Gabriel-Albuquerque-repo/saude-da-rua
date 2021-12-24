@@ -1,4 +1,4 @@
-import VolunteerRepositoryInMemory from '../../in-memory/VolunteerRepositoryInMemory';
+import VolunteerRepositoryInMemory from '../../testRepositories/in-memory/VolunteerRepositoryInMemory';
 import { OccupationOptions, FreeDaysOfWeek } from '../../src/entities/Volunteer';
 import ICreateVolunteerRequestDTO from '../../src/useCases/createVolunteer/CreateVolunteerDTO';
 import CreateVolunteerUseCase from '../../src/useCases/createVolunteer/CreateVolunteerUseCase';
