@@ -4,14 +4,14 @@
   "main": "index.js",
   "author": "Gabriel de Albuquerque <gabrieleac2009@gmail.com>",
   "license": "MIT",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "start": "node dist/server.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/server.ts",
-    "test": "jest --watchAll --coverage --verbose --silent --runInBand"
-  },
-  "jest": {
-    "testEnvironment": "node"
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
