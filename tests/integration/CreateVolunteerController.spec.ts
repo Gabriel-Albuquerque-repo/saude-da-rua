@@ -41,11 +41,13 @@ describe('Create volunteer Controller', () => {
 
     expect(response.statusCode).toBe(201);
 
-    const response2: request.Response = await request(app)
-      .post('/create-volunteer')
-      .send(volunteerData);
+    // const response2: request.Response = await request(app)
+    //   .post('/create-volunteer')
+    //   .send(volunteerData);
 
-    expect(response2.statusCode).toBe(200);
-    expect(response2.body.ErrorMessage).toEqual('Volunteer already exists / Voluntário já existe');
+    // expect(response2.statusCode).toBe(200);
+    // expect(response2.body.ErrorMessage).toEqual(
+    // 'Volunteer already exists / Voluntário já existe'
+    // );
   });
 });
