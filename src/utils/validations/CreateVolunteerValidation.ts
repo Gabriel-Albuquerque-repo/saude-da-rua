@@ -2,7 +2,7 @@ import * as Joi from 'joi';
 import { Request, Response, NextFunction } from 'express';
 import { OccupationOptions, FreeDaysOfWeek } from '@entities/Volunteer';
 
-class CreateUserValidation {
+class CreateVolunteerValidation {
   public request: Request;
 
   public response: Response;
@@ -101,10 +101,14 @@ class CreateUserValidation {
       return this.response
         .status(400)
         .json(
-          { ErrorMessage: error.details[0].message, err: error },
+          {
+            ErrorMessage: error.details[0].message,
+            err: error,
+          },
+
         );
     }
   }
 }
 
-export default CreateUserValidation;
+export default CreateVolunteerValidation;

@@ -13,7 +13,7 @@ class CreateVolunteerUseCase {
     const volunteerAlreadyExists: boolean = await this.volunteerRepository.findByEmail(data.email);
 
     if (volunteerAlreadyExists) {
-      throw new Error('Volunteer already exists / Voluntário já existe');
+      throw new Error(`Volunteer ${data.fullName} already exists / Voluntário já existe`);
     }
 
     const newVolunteer = new Volunteer(data);
